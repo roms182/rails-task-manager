@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'index', to: 'tasks#index'
-  get 'new', to: 'tasks#new'
-  post 'create', to: 'tasks#create'
-  get 'show/:id', to: 'tasks#show'
+  resources :tasks
 
 
 

@@ -3,11 +3,10 @@
 <% @tasks.each do |task| %>
   <ul>
     <li> <%= task.name %> | <%= task.who %> |
-      <% urlshow = "/show/" + task.id.to_s %>
-      <%= link_to 'see', urlshow %></li>
-      <% urldelete = "/destroy/" + task.id.to_s %>
-      <%= link_to 'delete', urldelete %></li>
+      <%= link_to 'see', task %> #
+      <%= link_to 'delete', task, :method => :delete, data: { confirm: "Are you sure?" } %> #
+      <%= link_to 'edit', edit_task_path(task) %></li>
   </ul>
 <% end %>
 
-<p><%= link_to 'Add a task', 'new' %></p>
+<p><%= link_to 'Add a task', task_path('new') %></p>
